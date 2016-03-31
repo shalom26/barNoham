@@ -1,0 +1,145 @@
+@import "myvars.scss";
+@import "bootstrap_novars.scss";
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+.ng-animate.item:not(.left):not(.right) {
+  -webkit-transition: 0s ease-in-out left;
+  transition: 0s ease-in-out left
+}
+.uib-datepicker .uib-title {
+  width: 100%;
+}
+
+.uib-day button, .uib-month button, .uib-year button {
+  min-width: 100%;
+}
+
+.uib-datepicker-popup.dropdown-menu {
+  display: block;
+}
+
+.uib-button-bar {
+  padding: 10px 9px 2px;
+}
+
+.uib-time input {
+  width: 50px;
+}
+
+[uib-typeahead-popup].dropdown-menu {
+  display: block;
+}
+
+.side-menu{
+
+  height: 100%;
+  width: 100%;
+  background-color:#1b6d85;
+}
+
+.z-index{
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  align-self: center ;
+  height: 300px;
+  width: 300px;
+  background-color: #8c8c8c
+}
+
+.dd {
+  width: 100px;
+  height: 30px;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.dd-button{
+  width: 100px;
+  height: 40px;
+  padding: 10px;
+  margin-right: 10px;
+
+}
+.btn1{
+  text-transform: none;
+  height: 5%;
+  position: absolute;
+  vertical-align: bottom;
+}
+.pos-relative{
+  position: relative;
+}
+
+.side-line{
+  height: 600px;
+  width: 17%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:#FF9800 ;
+
+}
+
+.vertical{
+  //-webkit-transform:rotate(90deg);
+  //-moz-transform:rotate(90deg);
+  //-o-transform: rotate(90deg);
+  //-ms-transform:rotate(90deg);
+  //position: absolute;
+  transform: rotate(90deg);
+  font-size:2em;
+
+}
+
+.right{
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.md-button.btn2{
+  background-color:#00BCD4;
+  color: white;
+}
+.md-button.btn3{
+  background-color: #8BC34A;
+  color: white;
+
+}
+
+.md-button.btn4{
+  background-color: #FFC107;
+  color: white;
+
+}
+
+

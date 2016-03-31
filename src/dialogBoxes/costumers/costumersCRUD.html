@@ -1,0 +1,12 @@
+
+
+<h1>Costumers</h1>
+
+<md-content>
+    <div flex="row" ng-repeat="cost in vm.costumers ">
+        {{cost.name}}
+            <md-button class="md-warn md-raised" ng-click="vm.delete(cost)"> delete</md-button>
+        </div>
+        <hr/>
+    </div>
+</md-content>

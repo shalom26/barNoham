@@ -1,0 +1,21 @@
+<h1>Courses</h1>
+
+<md-content>
+    <div flex="row" ng-repeat="course in vm.courses ">
+        {{course.name}}
+        <div flex="row">
+            <a ui-sref="course({id:course.id})">Details</a>
+
+
+            <md-button class="md-warn md-raised" ng-click="vm.delete(course)"> delete</md-button>
+
+            <a ui-sref="editCourse({id:course.id})">
+                <md-button class="md-primary md-raised">
+                    Edit
+                </md-button>
+            </a>
+
+        </div>
+        <hr/>
+    </div>
+</md-content>

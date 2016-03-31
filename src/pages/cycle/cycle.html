@@ -1,0 +1,132 @@
+<md-content class="md-padding">
+    <md-tabs class="md-accent md-dynamic-height md-border-bottom" md-selected="data.selectedIndex"
+             md-align-tabs="{{data.bottom ? 'bottom' : 'top'}}">
+        <md-tab id="tab1" layout="column">
+            <md-tab-label>Proporties</md-tab-label>
+
+            <md-tab-body>
+
+                <md-input-container flex>
+                    <label>Cycle Name</label>
+                    <input ng-model="vm.currCycle.name">
+                </md-input-container>
+
+                <md-divider></md-divider>
+
+                <div layout="row">
+                    <div>
+                        <h4>Start</h4>
+                        <!--<h4 class="md-subhead">Input[type=date] element</h4>-->
+                        <md-input-container>
+                            <label>Date</label>
+                            <input type="text" mdp-format="DD,MM,YYYY" mdp-date-picker ng-model="vm.startDate"/>
+                        </md-input-container>
+                    </div>
+
+                    <div>
+                        <h4>End</h4>
+                        <!--<h4 class="md-subhead">Input[type=date] element</h4>-->
+                        <md-input-container>
+                            <label>Date</label>
+                            <input type="text" mdp-format="DD,MM,YYYY" mdp-date-picker ng-model="vm.endDate"/>
+                        </md-input-container>
+                    </div>
+                </div>
+
+                <md-divider></md-divider>
+
+                <div layout="row">
+                    <h4 class="md-padding">Theory</h4>
+                    <md-checkbox ng-click="vm.addTheoryDay(day)" ng-model="day.on" ng-repeat="day in vm.thoeDays"
+                                 value="{{day}}">{{day.name}}
+                    </md-checkbox>
+                </div>
+
+                <md-divider></md-divider>
+
+                <div layout="row">
+                    <h4 class="md-padding">Practical</h4>
+                    <md-checkbox ng-click="vm.addPractDay(day)" ng-model="day.on" ng-repeat="day in vm.practDays"
+                                 value="{{day}}">{{day.name}}
+                    </md-checkbox>
+                </div>
+
+                <md-divider></md-divider>
+
+                <md-input-container class="posRel">
+                    <label>Number of students</label>
+                    <input type="number" step="1" name="studentsNumber" ng-model="vm.numStudentsSelected" min="1"
+                           max="100">
+                </md-input-container>
+
+                <div>
+                    <md-divider></md-divider>
+                </div>
+
+                <md-input-container>
+                    <label flex>Number of groups</label>
+                    <input type="number" step="1" name="gourpsNumber" ng-model="vm.numGroupsSelected" min="1"
+                           max="100">
+                </md-input-container>
+
+
+                <!--<span>Number Of Student</span>-->
+
+                <!--<md-select placeholder="Number Of Students" ng-model="vm.numStudentsSelected" md-on-open="loadUsers()" style="min-width: 200px;">-->
+                <!--<md-option ng-value="num" ng-repeat="num in vm.numStudents">{{num}}</md-option>-->
+                <!--</md-select>-->
+
+                <!--<md-divider></md-divider>-->
+
+                <!--<span>Number Of Groups</span>-->
+
+                <!--<md-select placeholder="Number Of Groups" ng-model="vm.numGroupsSelected" md-on-open="loadUsers()" style="min-width: 200px;">-->
+                <!--<md-option ng-value="num" ng-repeat="num in vm.numGroups">{{num}}</md-option>-->
+                <!--</md-select>-->
+
+
+            </md-tab-body>
+
+        </md-tab>
+        <md-tab id="tab2">
+            <md-tab-label>Time Training</md-tab-label>
+            <md-tab-body>
+
+
+            </md-tab-body>
+        </md-tab>
+        <md-tab id="tab3">
+            <md-tab-label>Schedule</md-tab-label>
+            <md-tab-body>
+                <h1>tab3</h1>
+            </md-tab-body>
+        </md-tab>
+
+        <md-tab id="tab4">
+            <md-tab-label>Schedule Instructors</md-tab-label>
+            <md-tab-body>
+                <h1>tab4</h1>
+            </md-tab-body>
+        </md-tab>
+
+        <md-tab id="tab5">
+            <md-tab-label>Exams</md-tab-label>
+            <md-tab-body>
+                <h1>tab5</h1>
+            </md-tab-body>
+        </md-tab>
+
+    </md-tabs>
+
+    <div flex layout="row">
+        <md-button class="md-raised md-primary">Download</md-button>
+        <md-button class="md-raised md-button">Start manage</md-button>
+        <div flex class="right">
+            <md-button class="md-raised btn2">Delete</md-button>
+            <md-button class="md-raised btn3">Cancel</md-button>
+            <md-button class="md-raised btn4">Submit</md-button>
+        </div>
+    </div>
+
+</md-content>
+

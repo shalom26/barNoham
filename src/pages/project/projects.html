@@ -1,0 +1,27 @@
+<h1>Projects</h1>
+
+<md-content>
+
+    <div flex="row" ng-repeat="proj in vm.projects ">
+        {{proj.name}}
+        <div flex="row">
+            <a ui-sref="project({id:proj.id})">Details</a>
+
+
+            <md-button class="md-warn md-raised" ng-click="vm.delete(proj)"> delete</md-button>
+            <!--<md-button class="md-primary md-raised" ng-click="vm.edit($index,$event)">Edit</md-button>-->
+
+            <a ui-sref="editProject({id:proj.id})">
+                <md-button class="md-primary md-raised">
+                    Edit
+                </md-button>
+            </a>
+
+            <!--<dialog-box ng-if="vm.dialog"></dialog-box>-->
+            <!--<div id="pop" class="z-index"></div>-->
+
+            <!--{{vm.dialog | json}}-->
+        </div>
+        <hr/>
+    </div>
+</md-content>

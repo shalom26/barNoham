@@ -1,0 +1,94 @@
+<md-content>
+
+    <!--<div layout="row">-->
+
+
+        <!--<div class="md-padding">-->
+            <!--<a ui-sref="createProject">-->
+                <!--<button aria-label="Create new project" class="btn btn-primary">Create new project</button>-->
+            <!--</a>-->
+        <!--</div>-->
+        <!--<div class="md-padding">-->
+            <!--<a ui-sref="createCourse">-->
+                <!--<button aria-label="createCourse" class="btn btn-success">Create new Course</button>-->
+            <!--</a>-->
+        <!--</div>-->
+
+    <!--</div>-->
+
+    <h3>Project {{vm.currProj.name}}</h3>
+    <!--<pre>{{vm.currProj | json}}</pre>-->
+    <md-list>
+        <md-list-item>
+            <h4>Name:</h4>
+            <p class="md-secondary">
+                {{vm.currProj.name}}
+            </p>
+        </md-list-item>
+
+        <md-divider></md-divider>
+
+
+        <md-list-item>
+            <h4>Costumer:</h4>
+            <p class="md-secondary">
+                {{vm.currProj.costumer.name}}
+            </p>
+        </md-list-item>
+
+        <md-divider></md-divider>
+
+        <md-list-item>
+            <h4>Manager:</h4>
+            <p class="md-secondary">
+                {{vm.currProj.manager.name}}
+            </p>
+        </md-list-item>
+        <md-divider></md-divider>
+
+        <md-list-item>
+            <h4>Factories:</h4>
+            <div flex layout="row" class="md-secondary">
+                <p ng-repeat="fact in vm.facts" layout-margin>
+                    {{fact.name}}
+                </p>
+            </div>
+        </md-list-item>
+        <md-divider></md-divider>
+
+        <md-list-item>
+            <h4>Languages:</h4>
+            <div layout="row" class="md-secondary-container">
+                <div ng-repeat="lang in vm.langs" layout-margin>
+                    <p flex> {{lang.name}}</p>
+                    <span flex>  </span>
+                </div>
+            </div>
+        </md-list-item>
+        <md-divider></md-divider>
+
+
+        <md-list-item>
+            <h4>Courses:</h4>
+            <p class="md-secondary" ng-repeat="course in vm.courses">
+                {{course.name}}
+            </p>
+        </md-list-item>
+        <md-divider></md-divider>
+
+    </md-list>
+
+    <a ui-sref="projects">
+        <button class="btn btn-success">back</button>
+    </a>
+    <a ui-sref="editProject({id:vm.currProj.id})">
+        <button class="btn btn-info">edit</button>
+    </a>
+    <hr>
+    <!--<pre>-->
+    <!--{{vm.projects | json}}-->
+    <!--</pre>-->
+
+</md-content>
+
+

@@ -1,0 +1,110 @@
+<md-content flex layout="column" class="container">
+
+    <!--<div layout="row">-->
+
+        <!--<div class="md-padding">-->
+            <!--<a ui-sref="createProject">-->
+                <!--<button aria-label="Create new project" class="btn btn-primary">Create new project</button>-->
+            <!--</a>-->
+        <!--</div>-->
+        <!--<div class="md-padding">-->
+            <!--<a ui-sref="createCourse">-->
+                <!--<button aria-label="createCourse" class="btn btn-success">Create new Course</button>-->
+            <!--</a>-->
+        <!--</div>-->
+
+    <!--</div>-->
+
+    <h3>Project {{vm.proj.name}}</h3>
+    <!--<div flex layout="column" class="container">-->
+
+    <md-input-container flex>
+        <label>Name</label>
+        <input ng-model="vm.proj.name">
+    </md-input-container>
+
+
+    <div layout="row">
+        <div flex>
+            <label>Costumer</label>
+            <md-list>
+                <md-list-item ng-if="vm.costumer">{{vm.costumer.name}}</md-list-item>
+            </md-list>
+        </div>
+        <div flex>
+            <md-button ng-click="vm.showCostumers($event)" class="btn1 md-raised md-primary">Costumers</md-button>
+        </div>
+    </div>
+
+
+    <md-divider></md-divider>
+
+    <div flex layout="row">
+        <div flex>
+            <label>Manager</label>
+            <md-list>
+                <md-list-item ng-value="val" ng-repeat="val in vm.managers">{{val.name}}</md-list-item>
+            </md-list>
+        </div>
+
+        <div flex>
+            <md-button ng-click="vm.showUsers($event)" class=" btn1 md-raised md-primary">Managers</md-button>
+        </div>
+
+    </div>
+
+    <md-divider></md-divider>
+
+
+    <div layout="row">
+        <div flex>
+            <label>Factories</label>
+            <md-list>
+                <md-list-item ng-value="val" ng-repeat="val in vm.factories">{{val.name}}</md-list-item>
+                </md-select>
+            </md-list>
+        </div>
+        <div flex>
+            <md-button ng-click="vm.showFactories($event)" class=" btn1 md-raised md-primary">Factories</md-button>
+        </div>
+    </div>
+
+    <md-divider></md-divider>
+
+
+    <div layout="row">
+        <div flex>
+            <label>Languages</label>
+            <md-list>
+                <md-list-item ng-value="val" ng-repeat="val in vm.langs">{{val.name}}</md-list-item>
+            </md-list>
+        </div>
+        <div flex>
+            <md-button ng-click="vm.showLanguages($event)" class=" btn1 md-raised md-primary">Languages</md-button>
+        </div>
+
+    </div>
+
+    <md-divider></md-divider>
+
+
+    <div layout="row">
+        <div flex>
+            <label>Courses</label>
+            <md-list>
+                <md-list-item ng-value="val" ng-repeat="val in vm.courses">{{val.name}}</md-list-item>
+            </md-list>
+        </div>
+        <div flex>
+            <md-button ng-click="vm.showCourses($event)" class=" btn1 md-raised md-primary">Courses</md-button>
+        </div>
+    </div>
+    <md-divider></md-divider>
+
+
+    <a ui-sref="projects">
+        <md-button layout="row" class="btn1 md-raised md-button dd-button" ng-click="vm.createProj()">Submit
+        </md-button>
+    </a>
+    <hr>
+</md-content>

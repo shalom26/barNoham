@@ -1,0 +1,52 @@
+<md-dialog aria-label="Costumers">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Costumer</h2>
+                <span flex></span>
+                <md-button aria-label="cancel" class="md-icon-button" ng-click="vm.cancel()">
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+
+            </md-list>
+
+            <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab label="Costumer">
+                    <md-radio-group ng-model="vm.selected" class="md-primary">
+                        <md-radio-button ng-repeat="cost in vm.costumers"
+                                         ng-value="cost"
+                                         ng-class="{'md-align-top-left': $index==1}" >
+                            {{cost.name}}
+                        </md-radio-button>
+                    </md-radio-group>
+
+                    <hr />
+                </md-tab>
+                <md-tab label="Add Costumer">
+                    <md-content class="md-padding">
+                        <div>
+                            <md-input>
+                                Name: <input type="text" ng-model="vm.newCost.name" required>
+                            </md-input>
+                        </div>
+                        <md-button aria-label="add costumer" class="btn-danger" ng-click="vm.addCost()">Add Costumer</md-button>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+
+            <span flex></span>
+            <md-button aria-label="cancel" ng-click="vm.$mdDialog.hide('not useful')">
+                Cancel
+            </md-button>
+            <md-button aria-label="submit" ng-click="vm.submit()" style="margin-right:20px;">
+                Submit
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
+

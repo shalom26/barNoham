@@ -1,0 +1,231 @@
+<md-content class="md-padding">
+
+    <md-tabs class="md-accent md-dynamic-height md-border-bottom" md-selected="data.selectedIndex"
+             md-align-tabs="{{data.bottom ? 'bottom' : 'top'}}">
+        <md-tab id="tab1" layout="column">
+
+            <md-tab-label>Properties</md-tab-label>
+
+
+            <md-tab-body>
+
+                <md-input-container flex>
+                    <label>Course Name</label>
+                    <input ng-model="vm.currCrs.name">
+                </md-input-container>
+
+                <div layout="row">
+                    <div flex>
+                        <label>Attach Course</label>
+                        <md-list>
+                            {{vm.course.name}}
+                        </md-list>
+                    </div>
+                    <div flex>
+                        <md-button aria-label="show costumers" ng-click="vm.showCourses($event)"
+                                   class="btn1 md-raised md-primary">Courses List
+                        </md-button>
+                    </div>
+                </div>
+
+                <md-divider></md-divider>
+
+                <md-input-container flex>
+                    <label>Catalog No.</label>
+                    <input ng-model="vm.catalogNum">
+                </md-input-container>
+
+                <md-divider></md-divider>
+
+                <div layout="row">
+                    <div flex>
+                        <label>Occupation</label>
+                        <md-list>
+                            {{vm.occupation.name}}
+                        </md-list>
+                    </div>
+                    <div flex>
+                        <md-button aria-label="show costumers" ng-click="vm.showOccupation($event)"
+                                   class="btn1 md-raised md-primary">Occupations
+                        </md-button>
+                    </div>
+                </div>
+
+                <md-divider></md-divider>
+
+                <div flex layout="row">
+                    <div flex>
+                        <label>Department</label>
+                        <md-list>
+                            <md-list-item ng-value="val" ng-repeat="val in vm.department">{{val.name}}</md-list-item>
+                        </md-list>
+                    </div>
+
+                    <div flex>
+                        <md-button aria-label="show users" ng-click="vm.showDepartments($event)"
+                                   class=" btn1 md-raised md-primary">Departments
+                        </md-button>
+                    </div>
+
+                </div>
+
+                <md-divider></md-divider>
+
+
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="md-block">
+                            <label>Target Population</label>
+                            <textarea ng-model="vm.tp" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+                        </md-input-container>
+                    </div>
+                    <!--<div flex>-->
+                    <!--<md-button aria-label="show courses" ng-click="vm.showCourses($event)"-->
+                    <!--class=" btn1 md-raised md-primary">Courses-->
+                    <!--</md-button>-->
+                    <!--</div>-->
+                </div>
+
+                <md-divider></md-divider>
+
+                <div layout="row">
+                    <div flex>
+                        <label>Prerequisites</label>
+                        <md-list>
+                            <md-list-item ng-value="val" ng-repeat="val in vm.prs">{{val.name}}</md-list-item>
+                        </md-list>
+                    </div>
+                    <div flex>
+                        <md-button aria-label="Pre requiers" ng-click="vm.showPrs($event)"
+                                   class=" btn1 md-raised md-primary">Prerequisites
+                        </md-button>
+                    </div>
+
+                </div>
+
+
+                <md-divider></md-divider>
+
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="md-block">
+                            <label>Description</label>
+                            <textarea ng-model="vm.desc" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+
+                <md-divider></md-divider>
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="md-block">
+                            <label>Main Objective
+                            </label>
+                            <textarea ng-model="vm.mainObjectives" md-maxlength="150" rows="5"
+                                      md-select-on-focus></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+
+                <md-divider></md-divider>
+
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="md-block">
+                            <label>Objectives</label>
+                            <textarea ng-model="vm.objectives" md-maxlength="150" rows="5"
+                                      md-select-on-focus></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+
+
+            </md-tab-body>
+
+        </md-tab>
+        <md-tab id="tab2" ng-disabled="data.secondLocked">
+            <md-tab-label>Requirements</md-tab-label>
+            <md-tab-body>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Minimum theory Grade</label>
+                    <md-select ng-model="vm.grade">
+                        <md-option ng-repeat="grade in vm.grades" ng-value="grade">
+                            {{grade}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-divider></md-divider>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Minimum Attendance Percentage</label>
+                    <md-select ng-model="vm.courseMinAtt">
+                        <md-option ng-repeat="att in vm.minAttPrec" ng-model="att">
+                            {{att}}%
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-divider></md-divider>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Minimum No. of Students</label>
+                    <md-select ng-model="vm.minNumStudent">
+                        <md-option ng-repeat="student in vm.students" ng-value="student">
+                            {{student}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-divider></md-divider>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Maximum No. of Students</label>
+                    <md-select ng-model="vm.maxNumStudent">
+                        <md-option ng-repeat="student in vm.students" ng-value="student">
+                            {{student}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-divider></md-divider>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Minimum Course Hours</label>
+                    <md-select ng-model="vm.minCourseHours">
+                        <md-option ng-repeat="houre in vm.students" ng-value="houre">
+                            {{houre}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-divider></md-divider>
+
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="md-block">
+                            <label>Training Materials – Instructor</label>
+                            <textarea ng-model="vm.traningMtrlInst" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+
+                <md-divider></md-divider>
+
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="md-block">
+                            <label>Training Materials – Student</label>
+                            <textarea ng-model="vm.traningMtrlStd" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+
+                <md-divider></md-divider>
+
+            </md-tab-body>
+        </md-tab>
+    </md-tabs>
+</md-content>
+

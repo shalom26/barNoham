@@ -1,0 +1,144 @@
+<md-content class="md-padding">
+    <md-tabs class="md-accent md-dynamic-height" md-selected="data.selectedIndex"
+             md-align-tabs="{{data.bottom ? 'bottom' : 'top'}}">
+        <md-tab id="tab1" layout="column">
+            <md-tab-label>Proporties</md-tab-label>
+
+
+            <md-tab-body>
+
+                <md-input-container flex>
+                    <label>Subsubject name</label>
+                    <input ng-model="vm.currSubSbj.name">
+                </md-input-container>
+
+                <md-divider></md-divider>
+
+                <md-input-container>
+                    <label>Hours For Subsubject</label>
+                    <input type="time" step="any" name="Hours For Subsubject" ng-model="vm.subSbjHrs" min="1"
+                           max="100">
+                </md-input-container>
+
+                <md-divider></md-divider>
+
+                <div layout="row">
+                    <div flex>
+                        <md-input-container>
+                            <label>Preferment Obligation</label>
+                            <md-select ng-model="vm.preOblg">
+                                <md-option ng-repeat="preOblg in vm.preOblgs" value="{{preOblg}}">
+                                    {{preOblg}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                </div>
+                <md-divider></md-divider>
+
+
+                <div layout="row">
+                    <div flex>
+                        <md-input-container>
+                            <label>Prerequisites</label>
+                            <md-select ng-model="vm.Prerequisites">
+                                <md-option ng-repeat="preReq in vm.Prerequisites" value="{{preReq}}">
+                                    {{preReq}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                </div>
+                <md-divider></md-divider>
+
+                <div layout="row">
+                    <div flex>
+                        <md-input-container>
+                            <label>Subsubject Type</label>
+                            <md-select ng-model="vm.SubsubjectType">
+                                <md-option ng-repeat="type in vm.SubsubjectType" value="{{type}}">
+                                    {{type}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                </div>
+                <md-divider></md-divider>
+
+                <div layout="row">
+                    <div flex>
+                        <label>Subsubject Plan</label>
+                    </div>
+                    <div flex>
+                        <md-button aria-label="Subsubject Plan" ng-click="vm.showSubsubjectPlan($event)"
+                                   class=" btn1 md-raised md-primary">
+                            Subsubject Plan
+                        </md-button>
+                    </div>
+                </div>
+                <md-divider></md-divider>
+
+
+            </md-tab-body>
+
+        </md-tab>
+        <md-tab id="tab2">
+            <md-tab-label>Tasks</md-tab-label>
+            <md-tab-body>
+
+                <div flex>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Task</th>
+                            <th>Percentage</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="task in vm.tasks">
+                            <td>{{task.id}}</td>
+                            <td>{{task.name}}</td>
+                            <td>
+                                <md-input>
+                                    <md-input-container class="md-icon-float md-icon-right md-block">
+                                        <label>Percentage</label>
+                                        <input ng-model="task.percentage" type="number" step="5" min="0" max="100">
+                                    </md-input-container>
+                                </md-input>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </md-tab-body>
+        </md-tab>
+        <md-tab id="tab3">
+            <md-tab-label>Evaluation Parameters</md-tab-label>
+            <md-tab-body>
+                <h1>tab3</h1>
+            </md-tab-body>
+        </md-tab>
+
+        <md-tab id="tab4">
+            <md-tab-label>Counted Activities</md-tab-label>
+            <md-tab-body>
+                <h1>tab4</h1>
+            </md-tab-body>
+        </md-tab>
+
+    </md-tabs>
+
+    <div flex layout="row">
+        <md-button class="md-raised md-primary">Download</md-button>
+        <md-button class="md-raised md-button">Start manage</md-button>
+        <div flex class="right">
+            <md-button class="md-raised btn2">Delete</md-button>
+            <md-button class="md-raised btn3">Cancel</md-button>
+            <md-button class="md-raised btn4">Submit</md-button>
+        </div>
+    </div>
+
+</md-content>
+

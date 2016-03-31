@@ -1,0 +1,55 @@
+<md-dialog aria-label="Costumers">
+    <form>
+        <md-toolbar>
+
+            <div class="md-toolbar-tools">
+                <h2>Languages</h2>
+                <span flex></span>
+                <md-button aria-label="cancel" class="md-icon-button" ng-click="vm.cancel()">
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content style="max-width:800px;max-height:810px;">
+            <!--{{vm.langs | json}}-->
+            <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab label="Languages">
+                    <md-content class="md-padding">
+                        <md-list>
+                            <md-list-item class="md-2-line" ng-repeat="lang in vm.langs track by lang.id ">
+                                <div class="md-list-item-text">
+                                    <md-checkbox ng-model="lang.on" ng-change="vm.selectItem(lang)">
+                                        <h3>{{::lang.name}}</h3>
+                                    </md-checkbox>
+                                    <!--<p>{{item.description}}</p>-->
+                                </div>
+                            </md-list-item>
+
+                    </md-content>
+                </md-tab>
+                <md-tab label="Add Language">
+                    <md-content class="md-padding">
+                        <div>
+                            <md-input>
+                                Name: <input type="text" ng-model="vm.newLang.name" required>
+                            </md-input>
+                        </div>
+                        <md-button aria-label="addLang" class="btn-danger" ng-click="vm.addLang()">Add Language</md-button>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+
+            <span flex></span>
+            <md-button aria-label="cancel" ng-click="vm.$mdDialog.hide('not useful')">
+                Cancel
+            </md-button>
+            <md-button aria-label="submit" ng-click="vm.submit()" style="margin-right:20px;">
+                Submit
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
+

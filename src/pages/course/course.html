@@ -1,0 +1,24 @@
+<div class="drop">
+    <h1>Course</h1>
+    <section>
+        Id:
+        {{vm.currCourse.id }}
+    </section>
+
+    <section>
+        Title:
+        {{vm.currCourse.title }}
+    </section>
+
+    <section>
+        Occupation:
+        {{vm.currCourse.occupation }}
+    </section>
+
+    <a ui-sref="editCourse({id:vm.currCourse.id})">
+        <md-button class="md-primary md-raised">
+            Edit
+        </md-button>
+    </a>
+
+</div>

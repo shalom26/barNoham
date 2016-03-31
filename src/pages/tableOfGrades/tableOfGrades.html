@@ -1,0 +1,45 @@
+<md-content class="md-padding">
+
+    <md-input-container>
+
+        <label>Lists</label>
+        <md-select ng-model="vm.selected">
+            <md-option ng-repeat="list in vm.list" value="{{list.name}}">
+                {{list.name}}
+            </md-option>
+        </md-select>
+    </md-input-container>
+
+<h3>{{vm.table.name}}</h3>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Description Detalis</th>
+            <th>Description</th>
+            <th>Grade</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="param in vm.table.grades">
+            <td>
+                <md-input-container>
+                    <label>Description</label>
+                    <textarea md-maxlength="150" rows="5" type="text" ng-model="param.details"> </textarea>
+                </md-input-container>
+            </td>
+            <div class="right">
+                <td>{{param.desc}}</td>
+                <td>{{param.grade}}</td>
+            </div>
+        </tr>
+
+
+        </tbody>
+
+
+</md-content>
+
+
+
+
+

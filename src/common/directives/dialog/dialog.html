@@ -1,0 +1,25 @@
+<div ng-controller="ProjCtrl as vm">
+    <h1>Edit Project</h1>
+
+    <form name="userForm">
+        <md-input-container>
+            <label>Name</label>
+            <input name="name" ng-model="name" required md-maxlength="10" minlength="4">
+            <div ng-messages="userForm.name.$error" ng-show="userForm.name.$dirty">
+                {{vm.name}}
+
+            </div>
+        </md-input-container>
+        <md-input-container>
+            <label>Password</label>
+            <textarea name="password" ng-model="password" required></textarea>
+            <div ng-show="userForm.password.$dirty">
+            </div>
+        </md-input-container>
+        <md-button ng-model="submit" ng-click="vm.submit()">Submit</md-button>
+
+    </form>
+
+</div>
+
+

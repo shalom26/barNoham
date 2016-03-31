@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bn" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body layout="column" ng-controller="sideNavCtrl as vm ">
+    <md-toolbar layout="row">
+        <md-button class="menu">
+            <md-icon md-svg-src="images/beaker.svg" ng-click="vm.openLeftMenu()"></md-icon>
+        </md-button>
+    </md-toolbar>
+    <side-bar></side-bar>
+</body>
+</html>

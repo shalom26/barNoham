@@ -1,0 +1,115 @@
+<md-content class="md-padding">
+    <md-tabs class="md-accent" md-selected="data.selectedIndex" md-align-tabs="{{data.bottom ? 'bottom' : 'top'}}">
+        <md-tab id="tab1" layout="column">
+            <md-tab-label>Tab One</md-tab-label>
+
+            <md-tab-body >
+                <md-input-container flex>
+                    <label>Course Name</label>
+                    <input ng-model="vm.course.name">
+                </md-input-container>
+
+
+                <div layout="row">
+                    <div flex>
+                        <label>Occupation</label>
+                        <md-list>
+                            {{vm.occupation.name}}
+                        </md-list>
+                    </div>
+                    <div flex>
+                        <md-button aria-label="show costumers" ng-click="vm.showOccupation($event)"
+                                   class="btn1 md-raised md-primary">Occupations
+                        </md-button>
+                    </div>
+                </div>
+
+                <md-divider></md-divider>
+
+                <div flex layout="row">
+                    <div flex>
+                        <label>Department</label>
+                        <md-list>
+                            <md-list-item ng-value="val" ng-repeat="val in vm.department">{{val.name}}</md-list-item>
+                        </md-list>
+                    </div>
+
+                    <div flex>
+                        <md-button aria-label="show users" ng-click="vm.showDepartments($event)"
+                                   class=" btn1 md-raised md-primary">Departments
+                        </md-button>
+                    </div>
+
+                </div>
+
+                <md-divider></md-divider>
+
+
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="md-block">
+                            <label>Target Population</label>
+                            <textarea ng-model="vm.tp" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+                        </md-input-container>
+                    </div>
+                    <!--<div flex>-->
+                    <!--<md-button aria-label="show courses" ng-click="vm.showCourses($event)"-->
+                    <!--class=" btn1 md-raised md-primary">Courses-->
+                    <!--</md-button>-->
+                    <!--</div>-->
+                </div>
+
+                <md-divider></md-divider>
+
+                <div layout="row">
+                    <div flex>
+                        <label>Pre Requires</label>
+                        <md-list>
+                            <md-list-item ng-value="val" ng-repeat="val in vm.prs">{{val.name}}</md-list-item>
+                        </md-list>
+                    </div>
+                    <div flex>
+                        <md-button aria-label="Pre requiers" ng-click="vm.showPrs($event)"
+                                   class=" btn1 md-raised md-primary">Pre Requiers
+                        </md-button>
+                    </div>
+
+                </div>
+
+                <md-divider></md-divider>
+
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="md-block">
+                            <label>Description</label>
+                            <textarea ng-model="vm.desc" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+                        </md-input-container>
+                    </div>
+                    <!--<div flex>-->
+                    <!--<md-button aria-label="description" ng-click="vm.showCourses($event)"-->
+                    <!--class=" btn1 md-raised md-primary">Courses-->
+                    <!--</md-button>-->
+                    <!--</div>-->
+                </div>
+
+                <!--<md-divider></md-divider>-->
+
+            </md-tab-body>
+
+        </md-tab>
+        <md-tab id="tab2" ng-disabled="data.secondLocked">
+            <md-tab-label>Tab Two</md-tab-label>
+            <md-tab-body>
+                View for Item #2 <br/>
+                data.selectedIndex = 1;
+            </md-tab-body>
+        </md-tab>
+        <md-tab id="tab3">
+            <md-tab-label>Tab Three</md-tab-label>
+            <md-tab-body>
+                View for Item #3 <br/>
+<md-button ng-click="vm.createCourse()">Submit</md-button>            </md-tab-body>
+        </md-tab>
+    </md-tabs>
+</md-content>
+

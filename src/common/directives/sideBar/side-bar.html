@@ -1,0 +1,68 @@
+<div flex layout="row">
+
+    <md-sidenav md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" flex="grow" layout="column"
+                class="md-whiteframe-z2">
+
+
+        <div layout="row">
+            <div class="md-padding">
+                <a ui-sref="createProject" ng-click="vm.initProj()">
+                    <button aria-label="Create new project" class="btn btn-primary">Create new project</button>
+                </a>
+            </div>
+            <div class="md-padding">
+                <a ui-sref="createCourse">
+                    <button aria-label="createCourse" class="btn btn-success">Create new Course</button>
+                </a>
+            </div>
+
+        </div>
+        <div layout="row">
+
+            <div  ng-if="vm.isCourseTreeOpen" ng-click="vm.openCourseTree()" class="side-line  md-whiteframe-z2">
+                <span class="vertical">Projects</span>
+            </div>
+
+            <div ng-if="vm.closeMainTree" treecontrol flex-grow class="tree-classic"
+                 tree-model="vm.projects"
+                 options="vm.treeOptions"
+                 on-selection="vm.loadChildren"
+                 selected-node="node1">
+                <!--<pre>{{node}}</pre>-->
+
+                <a ng-if="node.type == 'project'" ui-sref="editProject({id:node.id})" >{{node.type}}:{{node.name}}</a>
+                <a ng-if="node.type == 'cycle'" ui-sref="editCycle({id:node.id})">{{node.type}}:{{node.id}}</a>
+                <a ng-if="node.type == 'course'" ui-sref="editCourse({id:node.id})" ng-click="vm.openCourseTree(node.id)">{{node.type}}:{{node.id}}</a>
+                <a ng-if="node.type == 'subject'" ui-sref="subject({id:node.id})">{{node.type}}:{{node.id}}</a>
+
+
+            </div>
+            <div ng-if="vm.isCourseTreeOpen" treecontrol flex-grow class="tree-classic"
+                 tree-model="vm.coursesTree"
+                 options="vm.treeOptions"
+                 on-selection="showSelected(node)"
+                 selected-node="node1">
+                <a ng-if="node.type == 'project'" ui-sref="editProject({id:node.id})">{{node.type}}:{{node.name}}</a>
+                <a ng-if="node.type == 'course'" ui-sref="editCourse({id:node.id})">{{node.type}}:{{node.id}}</a>
+                <a ng-if="node.type == 'syllabus'" ui-sref="syllabus({id:node.id})">{{node.type}}:{{node.id}}</a>
+                <a ng-if="node.type == 'subject'" ui-sref="subject({id:node.id})">{{node.type}}:{{node.id}}</a>
+                <a ng-if="node.type == 'subSubject'" ui-sref="subSubject({id:node.id})">{{node.type}}:{{node.id}}</a>
+                <a ng-if="node.type == 'cycles'">{{node.type}}:{{node.id}}</a>
+                <a ng-if="node.type == 'cycle'" ui-sref="cycle({id:node.id})">{{node.type}}:{{node.id}}</a>
+                <a ng-if="node.type == 'cycleMng'" ui-sref="cycleMng({id:node.id})">{{node.type}}:{{node.id}}</a>
+
+
+            </div>
+
+        </div>
+
+    </md-sidenav>
+
+    <md-content id="content" flex>
+        <div flex-grow ui-view></div>
+    </md-content>
+
+</div>
+
+
+

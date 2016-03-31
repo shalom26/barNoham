@@ -1,0 +1,56 @@
+
+
+<md-dialog aria-label="Costumers">
+    <form>
+        <md-toolbar>
+
+            <div class="md-toolbar-tools">
+                <h2>Courses</h2>
+                <span flex></span>
+                <md-button aria-label="cancel" class="md-icon-button" ng-click="vm.cancel()">
+                </md-button>
+            </div>
+        </md-toolbar>
+
+
+        <md-dialog-content style="max-width:800px;max-height:810px;">
+            <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab label="Courses">
+                    <md-content class="md-padding">
+                        <md-list>
+                            <md-list-item class="md-2-line" ng-repeat="course in vm.courses track by course.id ">
+                                <div class="md-list-item-text">
+                                    <md-checkbox ng-model="course.on" ng-change="vm.selectItem(course)">
+                                        <h3>{{::course.name}}</h3>
+                                    </md-checkbox>
+                                </div>
+                            </md-list-item>
+
+                    </md-content>
+                </md-tab>
+                <md-tab label="Add Course">
+                    <md-content class="md-padding">
+                        <div>
+                            <md-input>
+                                Name: <input type="text" ng-model="vm.newCourse.name" required>
+                            </md-input>
+                        </div>
+                        <md-button aria-label="add Course" class="btn-danger" ng-click="vm.addCourse()">Add Course</md-button>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+
+            <span flex></span>
+            <md-button aria-label="cancel" ng-click="vm.$mdDialog.hide('not useful')">
+                Cancel
+            </md-button>
+            <md-button aria-label="submit" ng-click="vm.submit()" style="margin-right:20px;">
+                Submit
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
+

@@ -1,0 +1,39 @@
+<md-content class="md-padding">
+
+
+    <div layout="row">
+        <span flex>Approval Lists</span>
+        <md-input-container>
+            <label>Lists</label>
+            <md-select ng-model="vm.lists">
+                <md-option ng-repeat="list in vm.lists" value="{{list.id}}">
+                    {{list.id}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in vm.currList">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.type}}</td>
+        </tr>
+
+
+        </tbody>
+
+</md-content>
+
+
+
+
+

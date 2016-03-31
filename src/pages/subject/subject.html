@@ -1,0 +1,147 @@
+<md-content flex layout="column" class="container">
+
+
+   
+    <h3>Subject {{vm.currSbj.id}}</h3>
+
+
+    <md-input-container flex>
+        <label>Name</label>
+        <input ng-model="vm.currSbj.name">
+    </md-input-container>
+
+
+    <md-input-container>
+        <label>Minimum Attendance Hours</label>
+        <input type="time" step="any" name="MinimumAttendanceHours" ng-model="vm.minAttHrs" min="1"
+               max="100" ng-pattern="/^1234/"/>
+    </md-input-container>
+
+    <md-divider></md-divider>
+
+    <md-input-container>
+        <label>Maximum no. of Student in a Group</label>
+        <input type="number" step="any" name="MaximumStudentGroup" ng-model="vm.maxStdnGrp" min="1"
+               max="100">
+    </md-input-container>
+
+    <md-divider></md-divider>
+
+    <md-input-container>
+        <label>Minimum Practical Hours</label>
+        <input type="time" step="any" name="MinPractHrs" ng-model="vm.minPractHrs" min="1"
+               max="100">
+    </md-input-container>
+
+    <md-divider></md-divider>
+
+
+    <div layout="row">
+        <div flex>
+            <md-input-container>
+                <label>Grade Type For Tasks</label>
+                <md-select ng-model="vm.gradeTypeTasks">
+                    <md-option ng-repeat="gradeType in vm.gradeTypesTaks" value="{{gradeType}}">
+                        {{gradeType}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+    </div>
+
+    <md-divider></md-divider>
+
+    <div layout="row">
+        <div flex>
+            <md-input-container>
+                <label>Grade Type For Subsubject</label>
+                <md-select ng-model="vm.gradeTypeSubj">
+                    <md-option ng-repeat="gradeType in vm.gradeTypesSubj" value="{{gradeType}}">
+                        {{gradeType}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+    </div>
+
+
+    <md-divider></md-divider>
+
+
+    <div layout="row">
+        <div flex>
+            <label>Table of Grades For Subsubject and Tasks</label>
+            <md-list>
+                <md-list-item ng-value="val" ng-repeat="val in vm.tableOfGrades">{{val.name}}</md-list-item>
+            </md-list>
+        </div>
+        <div flex>
+            <md-button aria-label="Table of Grades" ng-click="vm.showTableOfGrades($event)" class=" btn1 md-raised md-primary">
+                Table of Grades
+            </md-button>
+        </div>
+
+    </div>
+
+
+    <md-divider></md-divider>
+
+    <div layout="row">
+        <div flex>
+            <md-input-container>
+                <label>Counted Activitis</label>
+                <md-select ng-model="vm.countedActv">
+                    <md-option ng-repeat="actv in vm.countedActv" value="{{actv}}">
+                        {{actv}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+    </div>
+
+    <md-divider></md-divider>
+
+    <div layout="row">
+        <div flex>
+            <md-input-container>
+                <label>Evaluation Parameters</label>
+                <md-select ng-model="vm.evalPrms">
+                    <md-option ng-repeat="prm in vm.evalPrms" value="{{prm}}">
+                        {{prm}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+    </div>
+
+    <md-divider></md-divider>
+
+    <div layout="row">
+        <div flex>
+            <label>Table of Grades For Evaluation Parameters</label>
+            <md-list>
+                <md-list-item ng-value="val" ng-repeat="val in vm.tableOfGradesEval">{{val.name}}</md-list-item>
+            </md-list>
+        </div>
+        <div flex>
+            <md-button aria-label="Table of Grades For Evaluation Parameters" ng-click="vm.showTableOfGradesEval($event)" class=" btn1 md-raised md-primary">
+                Table of Grades For Evaluation Parameters
+            </md-button>
+        </div>
+
+    </div>
+
+    <md-button aria-label="submit" layout="row" class="btn1 md-raised md-button dd-button" ng-click="vm.updateProj()">
+        Submit
+    </md-button>
+
+    <md-button aria-label="cancel" layout="row" class="btn1 md-raised md-button dd-button" ng-click="vm.cancel()">
+        Cancel
+    </md-button>
+    <!--<button class="btn btn-info" ng-click="vm.createProj()">Create Project</button>-->
+    <hr>
+    <!--<pre>-->
+    <!--{{vm.projects | json}}-->
+    <!--</pre>-->
+
+</md-content>
